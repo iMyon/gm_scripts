@@ -1,0 +1,211 @@
+<UserScriptConfig>
+	<Script basedir="search_engineJump自用版" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="方便的在各个引擎之间跳转" enabled="true" filename="152399.user.js" installTime="1363183045901" modified="1363183045109" name="search_engineJump自用版" namespace="http://userscripts.org/users/snailwork" runAt="document-end" uuid="fbda0481-ab74-4342-b405-b55a6ebe02a6" version="3.0.1.5" installurl="https://userscripts.org/scripts/source/152399.user.js" updateurl="https://userscripts.org/scripts/source/152399.meta.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http*://*.google.*/*</Include>
+		<Include>https*://*.google.*/*</Include>
+		<Include>http*://*.baidu.*/*</Include>
+		<Include>http*://*.bing.*/*</Include>
+		<Include>http*://*.soso.*/*</Include>
+		<Include>http*://*.sogou.*/*</Include>
+		<Include>http*://*.youdao.*/*</Include>
+		<Include>http*://*.yahoo.*/*</Include>
+		<Include>http*://*.ktxp.*/*</Include>
+		<Include>http*://*.taobao.*/*</Include>
+		<Include>http*://*.gougou.*/*</Include>
+		<Include>http*://*.soku.*/*</Include>
+		<Include>http*://*.tudou.*/*</Include>
+		<Include>http*://*.56.*/*</Include>
+		<Include>http*://*.ku6.*/*</Include>
+		<Include>http*://*.youtube.*/*</Include>
+		<Include>http*://*.xiazaiba.*/*</Include>
+		<Include>http*://*.verycd.*/*</Include>
+		<Include>http*://*.1ting.*/*</Include>
+		<Include>http*://*.flickr.*/*</Include>
+		<Include>http*://*.douban.*/*</Include>
+		<Include>http*://*.picsearch.*/*</Include>
+		<Include>http*://*.top100.*/*</Include>
+		<Include>http*://*.xiami.*/*</Include>
+		<Include>http*://*.songtaste.*/*</Include>
+		<Include>http*://*.iciba.*/*</Include>
+		<Include>http*://*.56pan.*/*</Include>
+		<Include>http*://*.wikipedia.org/*</Include>
+		<Include>http*://dict.cn/*</Include>
+		<Include>http://dict.hjenglish.com/*</Include>
+		<Include>http://shooter.cn/search/*</Include>
+		<Include>http*://so.360.cn/s*</Include>
+		<Include>http*://*.so.com/s*</Include>
+		<Include>http*://so.hudong.com/*</Include>
+		<Include>http*://iask.sina.com.cn/*</Include>
+		<Include>https://addons.mozilla.org/*</Include>
+		<Include>http://www.mop.com/so/*</Include>
+		<Include>http://www.tianya.cn/search/*</Include>
+		<Include>http://s.weibo.com/weibo/*</Include>
+		<Include>http://search.t.qq.com/*</Include>
+	</Script>
+	<Script basedir="贴吧消息提醒" checkRemoteUpdates="1" dependhash="151322b5ef84dd92402d5a6ee41f464dddb295b7" description="" enabled="false" filename="151214.user.js" installTime="1363670288239" modified="1363670285171" name="贴吧消息提醒" namespace="userscripts.org" runAt="document-end" uuid="9da20d4a-1988-4fb8-bf5d-d3ba57bac259" version="1.20" installurl="http://userscripts.org/scripts/source/151214.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/151214.meta.js">
+		<Exclude>http://tieba.baidu.com/f?kw=*</Exclude>
+		<Exclude>http://tieba.baidu.com/f?*</Exclude>
+		<Exclude>http://tieba.baidu.com/p/*</Exclude>
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Include>*</Include>
+		<Require filename="jquery-1.6.js"/>
+	</Script>
+	<Script basedir="图片粘贴&amp;拖放二合一增强版" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="%E5%9B%BE%E7%89%87%E7%B2%98%E8%B4%B4%E6%8B%96%E6%94%BE%E4%BA%8C%E5%90%88%E4%B8%80.user.js" installTime="1363701136354" modified="1363701133375" name="图片粘贴&amp;拖放二合一增强版" namespace="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" runAt="document-end" uuid="7b21f422-c7f1-4b3d-b423-bd54a8036222" version="1" installurl="https://userscripts.org/scripts/source/162380.user.js" updateurl="https://userscripts.org/scripts/source/162380.meta.js">
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_log</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="Tieba_Tail" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="150519.user.js" installTime="1363864436823" modified="1364012952093" name="Tieba Tail" namespace="userscripts.org" runAt="document-end" uuid="e9f67fa2-1d39-49d4-aae1-3ae36a06a0d9" version="1.3.1" installurl="http://userscripts.org/scripts/source/150519.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/150519.meta.js">
+		<Grant>GM_getValue</Grant>
+		<Grant>GM_setValue</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="空格处理" checkRemoteUpdates="1" dependhash="b176b66b4173003d12cf0accccecb5925c34195b" description="" enabled="false" filename="空格处理.user.js" installTime="1364009914316" modified="1369574119227" name="大图（原空格处理）" namespace="" runAt="document-end" uuid="a056b66f-8c49-42ea-acd7-2a243a2c8eab" version="null" installurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86/%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86.user.js" updateurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86/%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86.user.js" icon="d5e97a6171316d6a753776667234e522">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="Baidu_320Kbps_Music_Helper" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Download 320Kbps music from music.baidu.com. 从百度音乐(music.baidu.com)下载320Kbps品质的音乐。" enabled="false" filename="160956.user.js" installTime="1364794602070" modified="1364794599006" name="Baidu_320Kbps_Music_Helper" namespace="a5314dcf-2736-4cfe-86a5-190c321e6d06@scriptish" runAt="document-end" uuid="2a656ca1-f9f6-470c-b95f-af13e04fbe89" version="3.1.4" installurl="https://userscripts.org/scripts/source/160956.user.js" updateurl="https://userscripts.org/scripts/source/160956.meta.js">
+		<Grant>none</Grant>
+		<Include>http://music.baidu.com/song/*/download*</Include>
+	</Script>
+	<Script basedir="Straight_Google" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Remove URL redirection from google products" enabled="false" filename="121261.user.js" installTime="1365832398858" modified="1365832396326" name="Straight Google" namespace="in.co.tossing.toolkit.google" runAt="document-end" uuid="cd51f097-2afe-4762-862f-1fc347fe754f" version="1.17.10" installurl="https://userscripts.org/scripts/source/121261.user.js" updateurl="https://userscripts.org/scripts/source/121261.meta.js">
+		<Exclude>*://www.google.com/reader/*</Exclude>
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Include>*://www.google.*/*q=*</Include>
+		<Include>*://www.google.*/*tbs=*</Include>
+		<Include>*://www.google.*/search?*</Include>
+		<Include>*://www.google.*/webhp?*</Include>
+		<Include>*://www.google.*/cse?*</Include>
+		<Include>*://www.google.*/?*</Include>
+		<Include>*://www.google.*/#*</Include>
+		<Include>*://www.google.*/</Include>
+		<Include>*://encrypted.google.*</Include>
+		<Include>*://ipv6.google.*</Include>
+		<Include>*://www.google.*/news*</Include>
+		<Include>*://news.google.*/*</Include>
+		<Include>*://plus.google.com/_/scs/apps-static/_/js/*</Include>
+		<Include>*://images.google.com/*</Include>
+		<Include>*://docs.google.com/*</Include>
+		<Include>*://maps.google.com/*</Include>
+		<Include>*://www.google.com/maps*</Include>
+		<Include>*://ditu.google.com/*</Include>
+		<Include>*://www.youtube.*</Include>
+		<Include>*://groups.google.com/group/*</Include>
+		<Include>*://www.google.com/bookmarks/*</Include>
+		<Include>*://history.google.com/bookmarks/*</Include>
+		<Include>*://www.google.com/history/*</Include>
+		<Include>*://www.google.com/prdhp*</Include>
+		<Include>*://www.google.com/products/catalog?*</Include>
+		<Include>*://www.google.com/shopping/product/*</Include>
+		<Include>*://mail.google.com/*</Include>
+		<Include>*://www.google.com/mail*</Include>
+		<Include>*://play.google.com/store*</Include>
+	</Script>
+	<Script basedir="changetieba" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="tiebatx.user.js" installTime="1365930490348" modified="1365930487737" name="changetieba" namespace="changepic" runAt="document-end" uuid="170ffef2-6f54-4df4-bcae-d2facb3ba909" version="1" installurl="file:///D:/%E6%A1%8C%E9%9D%A2/tiebatx.user.js" updateurl="file:///D:/%E6%A1%8C%E9%9D%A2/tiebatx.user.js">
+		<Grant>none</Grant>
+		<Include>http://www.baidu.com/p/setting/profile/portrait*</Include>
+	</Script>
+	<Script basedir="pixiv_original_image_link_mod" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="135265.user.js" installTime="1366283557949" modified="1366283555185" name="pixiv original image link mod" namespace="pixiv" runAt="document-end" uuid="8611a05d-fdee-4656-90cc-de7c65814fb6" version="null" installurl="http://userscripts.org/scripts/source/135265.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/135265.meta.js">
+		<Grant>none</Grant>
+		<Include>http://www.pixiv.net/member_illust.php*mode*</Include>
+		<Match>http://www.pixiv.net/member_illust.php*mode*</Match>
+	</Script>
+	<Script basedir="百度贴吧图片放大" checkRemoteUpdates="1" dependhash="9186308e85f7c8b195cbca464ee4b7c2f40d4bee" description="鼠标移动到上面时放大，移走还原。" enabled="true" filename="156914.user.js" installTime="1366285269765" modified="1366285266908" name="百度贴吧图片放大" namespace="http://sbwtw.cn/" runAt="document-end" uuid="e84ea21d-2e65-441a-a2d0-3c7dd71bc144" version="13-01-29.1" installurl="https://userscripts.org/scripts/source/156914.user.js" updateurl="https://userscripts.org/scripts/source/156914.meta.js" icon="d92f6fd8ad5265626f726ee90f">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/p/*</Include>
+		<Include>http://tieba.baidu.com/f?*</Include>
+	</Script>
+	<Script basedir="bilibili播放器修正" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="还原成bilibili原弹幕播放器" enabled="true" filename="165219.user.js" installTime="1367221627370" modified="1367221623926" name="bilibili播放器修正" namespace="jiayiming" runAt="document-end" uuid="624bf805-c23a-4d0e-a807-a5f733f59d55" version="1.5.0" installurl="https://userscripts.org/scripts/source/165219.user.js" updateurl="https://userscripts.org/scripts/source/165219.meta.js">
+		<Grant>GM_log</Grant>
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Include>http://www.bilibili.tv/video/av*</Include>
+	</Script>
+	<Script basedir="OpenGG.Clean.Player（Bae" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="通过替换swf播放器的方式来解决优酷的黑屏广告 In God，We Turst." enabled="false" filename="162286.user.js" installTime="1366546163710" modified="1366546160986" name="OpenGG.Clean.Player（Bae" namespace="http://userscripts.org/users/Kawaiiushio" runAt="document-end" uuid="5dd78de0-86b2-4d7a-a0f3-5700e5831ee4" version="1.363" installurl="http://userscripts.org/scripts/source/162286.user.js" updateurl="https://userscripts.org/scripts/source/162286.meta.js">
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Include>http://*/*</Include>
+		<Include>https://*/*</Include>
+	</Script>
+	<Script basedir="tieba_quote" checkRemoteUpdates="1" dependhash="ac9a5808e6774d58bb100a4376423fc405cf7d2f" description="百度贴吧引用" enabled="true" filename="150253.user.js" installTime="1366606721257" modified="1369556875136" name="tieba_quote" namespace="userscripts.org" runAt="document-end" uuid="6365aa81-6a12-4afd-b581-ca50aac14183" version="2013.2.21.0" installurl="https://userscripts.org/scripts/source/150253.user.js" updateurl="https://userscripts.org/scripts/source/150253.meta.js" icon="4e2ed7f8bbb3d4f2c2d2bb21">
+		<Grant>GM_addStyle</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/p/*</Include>
+		<Include>http://tieba.baidu.com/f?ct=*</Include>
+		<Include>http://tieba.baidu.com/f?kz=*</Include>
+	</Script>
+	<Script basedir="Niconvert_Commnet_Link" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="显示 Acfun 和 Bilibili 的弹幕评论地址" enabled="true" filename="130401.user.js" installTime="1367679099477" modified="1367679096382" name="Niconvert Commnet Link" namespace="qixinglu.com" runAt="document-end" uuid="161c1993-78fc-477e-b7ac-5a0956bc90f9" version="null" installurl="http://userscripts.org/scripts/source/130401.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/130401.meta.js">
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Include>http://www.bilibili.tv/video/*</Include>
+		<Include>http://bilibili.kankanews.com/video/*</Include>
+		<Include>http://bilibili.smgbb.cn/video/*</Include>
+		<Include>http://www.acfun.tv/v/*</Include>
+	</Script>
+	<Script basedir="Xunlei.Any.Player" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Xunlei.Any.Player, should be working on xlpan.com and can play any url as you wish." enabled="true" filename="138814.user.js" installTime="1368901754435" modified="1368901751585" name="Xunlei.Any.Player" namespace="Xunlei.Any.Player" runAt="document-end" uuid="afcbcf7b-8d67-483a-85b7-58f214a2bb32" version="0.45" installurl="https://userscripts.org/scripts/source/138814.user.js" updateurl="https://userscripts.org/scripts/source/138814.meta.js">
+		<Grant>none</Grant>
+		<Match>http://xlpan.com/*</Match>
+		<Match>http://f.xunlei.com/*</Match>
+	</Script>
+	<Script basedir="TiebaUsualSmilier" checkRemoteUpdates="1" dependhash="ac9a5808e6774d58bb100a4376423fc405cf7d2f" description="百度贴吧常用表情替换" enabled="false" filename="142404.user.js" installTime="1369371108993" modified="1369371106589" name="TiebaUsualSmilier" namespace="userscripts.org" runAt="document-end" uuid="9d795485-fe2c-4ed6-87ac-fdcc0ec25a4d" version="2013.5.24.0" installurl="https://userscripts.org/scripts/source/142404.user.js" updateurl="https://userscripts.org/scripts/source/142404.meta.js" icon="4e2ed7f8bbb3d4f2c2d2bb21">
+		<Grant>GM_addStyle</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="PIVIX百度发图脚本" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="PIVIX百度发图脚本.user.js" installTime="1369029778977" modified="1369119046556" name="PIVIX百度发图脚本" namespace="." runAt="document-end" uuid="57998dcc-081d-4b90-a039-85257dac41b6" version="1" installurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/PIVIX%E7%99%BE%E5%BA%A6%E5%8F%91%E5%9B%BE%E8%84%9A%E6%9C%AC/PIVIX%E7%99%BE%E5%BA%A6%E5%8F%91%E5%9B%BE%E8%84%9A%E6%9C%AC.user.js" updateurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/PIVIX%E7%99%BE%E5%BA%A6%E5%8F%91%E5%9B%BE%E8%84%9A%E6%9C%AC/PIVIX%E7%99%BE%E5%BA%A6%E5%8F%91%E5%9B%BE%E8%84%9A%E6%9C%AC.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="贴吧自定义表情" checkRemoteUpdates="1" dependhash="f25a757284611b3b7d44f15816c93c0cacd4bc23" description="" enabled="false" filename="贴吧自定义表情.user.js" installTime="1369062824562" modified="1369419867325" name="tiebaCustomFace" namespace="" runAt="document-end" uuid="e9c3632d-c42f-497e-ae83-2e0e44b4cf64" version="2013.5.24" installurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/%E8%B4%B4%E5%90%A7%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85/%E8%B4%B4%E5%90%A7%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85.user.js" updateurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/%E8%B4%B4%E5%90%A7%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85/%E8%B4%B4%E5%90%A7%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85.user.js" icon="c339b7e2d3a1b5c4c3a8d726">
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_getValue</Grant>
+		<Grant>GM_setValue</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="test" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="test.user.js" installTime="1369135273023" modified="1369197088589" name="test" namespace="." runAt="document-end" uuid="0e9c75a7-e296-4b4e-824e-925952286f67" version="1" installurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/test/test.user.js" updateurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/test/test.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/p/1910961835?pid=25137253010&amp;cid=</Include>
+	</Script>
+	<Script basedir="FrozenFaceSmiley" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="在百度贴吧中使用自定义表情" enabled="false" filename="129929.user.js" installTime="1369550726687" modified="1369550723919" name="FrozenFaceSmiley" namespace="nfblog.duapp.com" runAt="document-end" uuid="d163a1f5-b472-49b3-a98a-299443a6cbc3" version="3.3.2 修复 by 小绯" installurl="http://nfblog.duapp.com/129929.user.js" updateurl="http://nfblog.duapp.com/129929.user.js">
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_deleteValue</Grant>
+		<Grant>GM_getValue</Grant>
+		<Grant>GM_log</Grant>
+		<Grant>GM_setValue</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="tiebaCustomFace" checkRemoteUpdates="1" dependhash="f25a757284611b3b7d44f15816c93c0cacd4bc23" description="贴吧自定义表情" enabled="true" filename="168266.user.js" installTime="1369557713328" modified="1369628319128" name="tiebaCustomFace" namespace="userscripts.org" runAt="document-end" uuid="980ad084-527f-4193-85d8-4aa6519088d9" version="2013.5.26" installurl="http://userscripts.org/scripts/source/168266.user.js" updateurl="http://userscripts.org/scripts/source/168266.meta.js" icon="c339b7e2d3a1b5c4c3a8d726">
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_getValue</Grant>
+		<Grant>GM_setValue</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="Tieba_ACFace" checkRemoteUpdates="1" dependhash="ac9a5808e6774d58bb100a4376423fc405cf7d2f" description="百度贴吧acFun表情修改版" enabled="false" filename="142239.user.js" installTime="1369389328620" modified="1369389326823" name="Tieba_ACFace" namespace="userscripts.org" runAt="document-end" uuid="449eef11-efd4-43ef-9406-efc9ceefb441" version="2013.5.5.0" installurl="https://userscripts.org/scripts/source/142239.user.js" updateurl="https://userscripts.org/scripts/source/142239.meta.js" icon="4e2ed7f8bbb3d4f2c2d2bb21">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="百度貼吧繁體字" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="這個用戶腳本可以讓你在百度貼吧正常發表繁體中文文字，避免被強制（有時甚至錯誤地）轉換為簡體；同時支援發表任何Unicode擴展字元。Post Traditional Chinese and any Unicode characters in Baidu Tieba" enabled="false" filename="150073.user.js" installTime="1369389863141" modified="1369389862385" name="百度貼吧繁體字" namespace="http://userscripts.org/scripts/show/150073" runAt="document-end" uuid="f536bc85-480c-41ec-b4b1-21cb334d03b7" version="4.8" installurl="https://userscripts.org/scripts/source/150073.user.js" updateurl="https://userscripts.org/scripts/source/150073.meta.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/f*</Include>
+		<Include>http://tieba.baidu.com.cn/f*</Include>
+		<Include>http://tieba.baidu.cn/f*</Include>
+		<Include>http://tieba.baidu.com/p*</Include>
+		<Include>http://tieba.baidu.com.cn/p*</Include>
+		<Include>http://tieba.baidu.cn/p*</Include>
+	</Script>
+	<Script basedir="test222" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="test222.user.js" installTime="1369416312786" modified="1369572237331" name="test222" namespace="http://tieba.baidu.com/" runAt="document-end" uuid="9f617e06-0af0-446c-8405-3246fd28ae9e" version="1" installurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/test222/test222.user.js" updateurl="file:///D:/M_Firefox/Stable/profiles/gm_scripts/test222/test222.user.js">
+		<Grant>GM_setValue</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+	</Script>
+	<Script basedir="校长之怒" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="105184.user.js" installTime="1369464729439" modified="1369464727495" name="校长之怒" namespace="angerOfPresident" runAt="document-end" uuid="35aca541-c90b-4410-84df-0a392f6f243a" version="1.1.1.1.1.1.1" installurl="http://userscripts.org/scripts/source/105184.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/105184.meta.js">
+		<Grant>GM_addStyle</Grant>
+		<Grant>GM_xmlhttpRequest</Grant>
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/*</Include>
+		<Include>http://tieba.baidu.com.cn/*</Include>
+	</Script>
+</UserScriptConfig>
