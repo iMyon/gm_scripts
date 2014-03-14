@@ -324,8 +324,9 @@ var ImgOnClickAddMostUsedFace = function()
 				var cindex=parseInt(customId.replace("smilyTab",""));
 				if(cindex>0)
 				{
-					faces[cindex].faceSrc.splice(e.getAttribute('index'),1);
-					faces[cindex].faceSrc.unshift(e.getAttribute('data-surl'));
+					var ind = faces[cindex].faceSrc.indexOf(url);
+					faces[cindex].faceSrc.splice(ind,1);
+					faces[cindex].faceSrc.unshift(url);
 					saveFaces();
 				}
 			}
@@ -543,6 +544,7 @@ var saveFaces = function()
 	var facesTmp="";
 	for(var i=0;i<faces.length;i++)
 	{
+		faces[i].faceSrc = uniQueue(faces[i].faceSrc);
 		if(i!=faces.length-1)
 			facesTmp=facesTmp+JSON.stringify(faces[i])+splitor;
 		else
@@ -550,6 +552,20 @@ var saveFaces = function()
 	}
 	GM_setValue('FACES',facesTmp);
 	tbodyHtml=fetchTbodyHtml();
+}
+
+//数组去重复
+function uniQueue(array){
+	var arr=[];
+	var m;
+	while(array.length>0){
+		m=array[0];
+		arr.push(m);
+		array=$.grep(array,function(n,i){
+			return n==m;
+		},true);
+	}
+	return arr;
 }
 
 //表情标签页滚动
@@ -811,6 +827,12 @@ document.onclick=function(e)
    	if(target.nodeName.toLowerCase()=="html")
    		$('#addFaceDiv').remove();
 }
+
+//去除表情组中重复表情
+GM_registerMenuCommand("tiebaCustomFace--去除表情组中重复表情",function()
+	{
+
+	});
 
 //prev、next表情滚动条点击事件
 var tabScroll = function()

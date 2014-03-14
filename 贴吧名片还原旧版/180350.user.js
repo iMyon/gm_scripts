@@ -2,7 +2,7 @@
 // @name        贴吧名片还原旧版
 // @include     http://tieba.baidu.com/p/*
 // @include     http://tieba.baidu.com/f*ct=*
-// @version     2014.02.08
+// @version     2014.03.13
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
