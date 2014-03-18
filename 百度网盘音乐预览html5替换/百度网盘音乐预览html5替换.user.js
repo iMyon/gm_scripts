@@ -7,18 +7,22 @@
 
 var $=unsafeWindow.$;
 var category=unsafeWindow.FileUtils.shareLogData.category;
-var _mMusiclink;
+
+var _mMusiclink,_media_type;
 if(category == 2)
 {
 	(function run()
 	{
 		if(_mMusiclink)
 		{
-			//如果存在音乐预览，则替换
-			if(_mMusiclink)
+			//如果存在音乐预览且不是mp3，则替换
+			if(JSON.parse(unsafeWindow.FileUtils.viewShareData).server_filename.match(/\.mp3$/)==null)
 			{
-				var rHtml = '<video width="712px" height="100px" src="'+_mMusiclink+'" controls="controls" autoplay="1"></video>';
-				$(".mb-hd.mb-controller.clearfix").replaceWith(rHtml);
+				if(_mMusiclink&&_media_type!=2)
+				{
+					var rHtml = '<video width="712px" height="100px" src="'+_mMusiclink+'" controls="controls" autoplay="1"></video>';
+					$(".mb-hd.mb-controller.clearfix").replaceWith(rHtml);
+				}
 			}
 		}
 		else
