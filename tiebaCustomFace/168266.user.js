@@ -1,6 +1,5 @@
 // ==UserScript==
-// @name        tiebaCustomFace 
-// @updateURL      http://userscripts.org/scripts/source/168266.meta.js
+// @name        tiebaCustomFace // @updateURL      http://userscripts.org/scripts/source/168266.meta.js
 // @downloadURL    http://userscripts.org/scripts/source/168266.user.js
 // @description    贴吧自定义表情
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
@@ -53,7 +52,6 @@ function Face(tabName, srcArray, colCount, position) {
 var tbodyHtml = []; //存储表情tbody内的html
 var addFaces = function() {
     //获得百度自带表情json，隐藏用
-	baiduFace1 = [];
     $('.s_tab_btn').each(function() {
         baiduFace1.push(new defaultFace($(this).attr('data-index'), $(this).find('span').html()));
     });
@@ -112,7 +110,7 @@ var addBlacklistDiv = function() {
     var html = '<div id="blist"><div id="blistdiv">';
     var content;
     for (var i = 0; i < baiduFace1.length; i++)
-        html = html + '<span class="blistElement" index="' + baiduFace1[i].num + '">' + baiduFace1[i].name + '</span>';
+        html = html + '<span class="blistElement" index="' + baiduFace1[i].num + '">' + baiduFace1[i].nam + '</span>';
     html += '<br>';
     for (var i = 0; i < faces.length; i++)
         html = html + '<span class="blistElement" index="' + faces[i].tabName + '">' + faces[i].tabName + '</span>';
