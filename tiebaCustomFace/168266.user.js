@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name        tiebaCustomFace // @updateURL      http://userscripts.org/scripts/source/168266.meta.js
+// @name        tiebaCustomFace 
+// @updateURL      http://userscripts.org/scripts/source/168266.meta.js
 // @downloadURL    http://userscripts.org/scripts/source/168266.user.js
 // @description    贴吧自定义表情
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
@@ -110,7 +111,7 @@ var addBlacklistDiv = function() {
     var html = '<div id="blist"><div id="blistdiv">';
     var content;
     for (var i = 0; i < baiduFace1.length; i++)
-        html = html + '<span class="blistElement" index="' + baiduFace1[i].num + '">' + baiduFace1[i].nam + '</span>';
+        html = html + '<span class="blistElement" index="' + baiduFace1[i].num + '">' + baiduFace1[i].name + '</span>';
     html += '<br>';
     for (var i = 0; i < faces.length; i++)
         html = html + '<span class="blistElement" index="' + faces[i].tabName + '">' + faces[i].tabName + '</span>';
@@ -194,8 +195,8 @@ var addEventOnce = function() {
     r.addEventListener("click", tab_MoveRight, false);
     var gp = document.querySelector(css + " #getProfile"); //导出配置
     gp.addEventListener("click", function() {
-        if (confirm("确认"))
-            document.write(GM_getValue('FACES'));
+        if (confirm("转到纯文本模式复制文本保存配置"))
+            $('body').html(GM_getValue('FACES'));
     }, false);
     var lp = document.querySelector(css + " #loadProfile"); //导入配置
     lp.addEventListener("click", function() {
