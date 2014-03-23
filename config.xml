@@ -109,7 +109,7 @@
 		<Include>http://tieba.baidu.com/p/*</Include>
 		<Include>http://tieba.baidu.com/f?*</Include>
 	</Script>
-	<Script basedir="tiebaCustomFace" checkRemoteUpdates="1" dependhash="f25a757284611b3b7d44f15816c93c0cacd4bc23" description="贴吧自定义表情" enabled="true" filename="168266.user.js" installTime="1383935509084" modified="1394296454411" name="tiebaCustomFace" namespace="userscripts.org" runAt="document-end" uuid="86a7ed04-387e-481a-b98a-5c49b7546678" version="2014.3.6" installurl="http://userscripts.org/scripts/source/168266.user.js" updateurl="http://userscripts.org/scripts/source/168266.meta.js" icon="c339b7e2d3a1b5c4c3a8d726">
+	<Script basedir="tiebaCustomFace" checkRemoteUpdates="1" dependhash="f25a757284611b3b7d44f15816c93c0cacd4bc23" description="贴吧自定义表情" enabled="true" filename="168266.user.js" installTime="1395149801547" modified="1395154776790" name="tiebaCustomFace" namespace="userscripts.org" runAt="document-end" uuid="513cb49d-1f18-440e-bcb3-4ab71238a484" version="2014.3.6" installurl="http://userscripts.org/scripts/source/168266.user.js" updateurl="http://userscripts.org/scripts/source/168266.meta.js" icon="c339b7e2d3a1b5c4c3a8d726">
 		<Grant>GM_addStyle</Grant>
 		<Grant>GM_getValue</Grant>
 		<Grant>GM_registerMenuCommand</Grant>
@@ -138,7 +138,7 @@
 		<Grant>unsafeWindow</Grant>
 		<Include>http://www.pixiv.net/*</Include>
 	</Script>
-	<Script basedir="Pixiv_Filter" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Filters out images with few than the designated bookmarks (users)" enabled="true" filename="83212.user.js" installTime="1372951650697" modified="1372951648000" name="Pixiv Filter" namespace="Pixiv Filter" runAt="document-end" uuid="02dbe57e-d778-4f11-8721-caf9f4d668e1" version="3.3" installurl="https://userscripts.org/scripts/source/83212.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/83212.meta.js">
+	<Script basedir="Pixiv_Filter" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Filters out images with few than the designated bookmarks (users)" enabled="false" filename="83212.user.js" installTime="1372951650697" modified="1372951648000" name="Pixiv Filter" namespace="Pixiv Filter" runAt="document-end" uuid="02dbe57e-d778-4f11-8721-caf9f4d668e1" version="3.3" installurl="https://userscripts.org/scripts/source/83212.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/83212.meta.js">
 		<Grant>GM_getValue</Grant>
 		<Grant>GM_setValue</Grant>
 		<Grant>GM_xmlhttpRequest</Grant>
@@ -223,7 +223,7 @@
 		<Grant>GM_log</Grant>
 		<Include>http://tieba.baidu.com/*</Include>
 	</Script>
-	<Script basedir="osuReplaceDownloadLinkToKoreaSite" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="转换osu搜索页面下载链接到棒子网，破除下载限制 + 批量下载功能" enabled="true" filename="380634.user.js" installTime="1393476843694" modified="1393583890050" name="osuReplaceDownloadLinkToKoreaSite" namespace="myon" runAt="document-end" uuid="6fa22b1e-b633-48d1-a18f-41f0bf759ce9" version="2014.2.12" installurl="http://userscripts.org/scripts/source/380634.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/380634.meta.js">
+	<Script basedir="osuReplaceDownloadLinkToKoreaSite" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="转换osu搜索页面下载链接到棒子网，破除下载限制 + 批量下载功能" enabled="true" filename="380634.user.js" installTime="1393476843694" modified="1395468847077" name="osuReplaceDownloadLinkToKoreaSite" namespace="myon" runAt="document-end" uuid="6fa22b1e-b633-48d1-a18f-41f0bf759ce9" version="2014.3.22" installurl="http://userscripts.org/scripts/source/380634.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/380634.meta.js">
 		<Grant>GM_registerMenuCommand</Grant>
 		<Grant>GM_xmlhttpRequest</Grant>
 		<Grant>unsafeWindow</Grant>
@@ -231,18 +231,20 @@
 		<Include>https://osu.ppy.sh/s/*</Include>
 		<Include>http://osu.ppy.sh/p/*</Include>
 		<Include>http://osu.ppy.sh/s/*</Include>
+		<Include>http://osu.ppy.sh/b/*</Include>
+		<Include>https://osu.ppy.sh/b/*</Include>
 	</Script>
 	<Script basedir="虾米音乐助手" checkRemoteUpdates="1" dependhash="6d67dcf433c05133119bb33da0578ec63c66d19b" description="虾米音乐助手带您突破虾米VIP会员音乐下载数量限制,畅享高品质音乐,另外通过分享VIP用户的Cookie,可以让普通用户也能享受到高品质音乐,这是一个合作分享的工具,人人喂我,我喂人人,世界因为分享更精彩" enabled="true" filename="175716.user.js" installTime="1393669869849" modified="1393669869849" name="虾米音乐助手" namespace="http://userscripts.org/scripts/show/175716" runAt="document-end" uuid="9aa41978-ce9b-45ef-9c2d-76c24bc2f6f3" version="1.0.8" installurl="https://userscripts.org/scripts/source/175716.user.js" updateurl="https://userscripts.org/scripts/source/175716.meta.js" icon="script_xiamimusicscript_icon_48.png">
 		<Grant>GM_setClipboard</Grant>
 		<Grant>GM_xmlhttpRequest</Grant>
 		<Include>http://www.xiami.com/download/*</Include>
 	</Script>
-	<Script basedir="百度网盘音乐预览html5替换" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="百度网盘音乐预览html5替换.user.js" installTime="1393671390590" modified="1393697273503" name="百度网盘音乐预览html5替换" namespace="" runAt="document-end" uuid="11a3002e-9b2f-4954-b296-9b8492571d24" version="2014.3.1" installurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2.user.js" updateurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2.user.js">
+	<Script basedir="百度网盘音乐预览html5替换" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="百度网盘音乐预览html5替换.user.js" installTime="1393671390590" modified="1395167414601" name="百度网盘音乐预览html5替换" namespace="" runAt="document-end" uuid="11a3002e-9b2f-4954-b296-9b8492571d24" version="2014.3.19" installurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2.user.js" updateurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%9F%B3%E4%B9%90%E9%A2%84%E8%A7%88html5%E6%9B%BF%E6%8D%A2.user.js">
 		<Grant>unsafeWindow</Grant>
 		<Include>http://pan.baidu.com/share/link?*</Include>
 		<Include>http://pan.baidu.com/s/*</Include>
 	</Script>
-	<Script basedir="bilibili_fixer(自用)" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="bilibili_youku.user.js" installTime="1394115974873" modified="1394427209541" name="bilibili fixer(自用)" namespace="" runAt="document-end" uuid="32405fa4-cae8-4b85-9b93-230ed4466b53" version="null" installurl="file:///F:/firefox/profiles/gm_scripts/bilibili_youku/bilibili_youku.user.js" updateurl="file:///F:/firefox/profiles/gm_scripts/bilibili_youku/bilibili_youku.user.js">
+	<Script basedir="bilibili_fixer(自用)" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="bilibili_youku.user.js" installTime="1394115974873" modified="1394903268807" name="bilibili fixer(鑷敤)" namespace="" runAt="document-end" uuid="32405fa4-cae8-4b85-9b93-230ed4466b53" version="null" installurl="file:///F:/firefox/profiles/gm_scripts/bilibili_youku/bilibili_youku.user.js" updateurl="file:///F:/firefox/profiles/gm_scripts/bilibili_youku/bilibili_youku.user.js">
 		<Grant>unsafeWindow</Grant>
 		<Include>http://www.bilibili.tv/video/av*</Include>
 	</Script>
@@ -262,5 +264,22 @@
 		<Include>http://tieba.baidu.com/f?*z=*</Include>
 		<Match>http://tieba.baidu.com/p/*</Match>
 		<Match>http://tieba.baidu.com/f?*z=*</Match>
+	</Script>
+	<Script basedir="fuck_tieba_lasyload" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="fuck_tieba_lasyload.user.js" installTime="1394811999155" modified="1394812168902" name="fuck_tieba_lasyload" namespace="" runAt="document-end" uuid="e0980297-4709-4cff-9d63-162b9cb47a2d" version="null" installurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/fuck_tieba_lasyload/fuck_tieba_lasyload.user.js" updateurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/fuck_tieba_lasyload/fuck_tieba_lasyload.user.js">
+		<Grant>none</Grant>
+		<Include>*</Include>
+	</Script>
+	<Script basedir="1123123" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="1123123.user.js" installTime="1395067909923" modified="1395068005926" name="1123123" namespace="." runAt="document-end" uuid="590e0d03-4178-4b93-b49d-a36291f31fc7" version="1" installurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/1123123/1123123.user.js" updateurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/1123123/1123123.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://tieba.baidu.com/i/data/panel?un*</Include>
+	</Script>
+	<Script basedir="test" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="test.user.js" installTime="1395158399607" modified="1395158952691" name="test" namespace="." runAt="document-end" uuid="8d4d40ce-8768-4e72-bddf-c4c8fff2b230" version="1" installurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/test/test.user.js" updateurl="file:///G:/%E6%A1%8C%E9%9D%A2/firefox/profiles_w/gm_scripts/test/test.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>*</Include>
+	</Script>
+	<Script basedir="BaiduYun-ShowAlbum_and_Artist" checkRemoteUpdates="1" dependhash="f25a757284611b3b7d44f15816c93c0cacd4bc23" description="度盘音乐文件显示专辑名和歌手" enabled="true" filename="417161.user.js" installTime="1395167943819" modified="1395167943819" name="BaiduYun-ShowAlbum_and_Artist" namespace="userscripts.org" runAt="document-end" uuid="ad10b157-ef72-4472-b66d-d05460071d4c" version="2014.3.19" installurl="http://userscripts.org/scripts/source/417161.user.js" updateurl="http://userscripts.org.nyud.net/scripts/source/417161.meta.js" icon="c339b7e2d3a1b5c4c3a8d726">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://pan.baidu.com/share/link?*</Include>
+		<Include>http://pan.baidu.com/s/*</Include>
 	</Script>
 </UserScriptConfig>
