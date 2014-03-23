@@ -4,7 +4,7 @@
 // @description    贴吧自定义表情
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
 // @include     http://tieba.baidu.com/*
-// @version     2014.3.19
+// @version     2014.3.23
 // ==/UserScript==
 
 var _window = typeof unsafeWindow == 'undefined' ? window : unsafeWindow;
@@ -777,10 +777,6 @@ padding:0px 1px !important;\
 IMG.faceImg:hover\
 {\
 	cursor:pointer !important;\
-}\
-#j_core_title_wrap\
-{\
-	position:relative !important;\
 }\
 .customSmily\
 {\
