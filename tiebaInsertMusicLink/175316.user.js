@@ -1,12 +1,13 @@
-
 // ==UserScript==
-// @name        tiebaInsertMusicLink
-// @author		猫酱
+// @name        tiebaInsertMusicLink 
+// @namespace   Myon
+// @description 贴吧插入自定义音乐链接
 // @include     http://tieba.baidu.com/*
-// @version     2013.11.9
+// @author      Myon<myon.cn@gmail.com>
+// @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaInsertMusicLink/175316.user.js
+// @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaInsertMusicLink/175316.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @updateURL   http://userscripts.org/scripts/source/175316.meta.js
-// @downloadURL http://userscripts.org/scripts/source/175316.user.js
+// @version     1.0
 // ==/UserScript==
 
 var _window = typeof unsafeWindow == 'undefined' ? window: unsafeWindow;
