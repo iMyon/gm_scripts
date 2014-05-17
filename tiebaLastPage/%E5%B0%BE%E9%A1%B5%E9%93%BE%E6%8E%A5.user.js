@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaLastPage/%25E5%25B0%25BE%25E9%25A1%25B5%25E9%2593%25BE%25E6%258E%25A5.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaLastPage/%25E5%25B0%25BE%25E9%25A1%25B5%25E9%2593%25BE%25E6%258E%25A5.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.0
+// @version     1.0.1
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -15,7 +15,6 @@ var $ = unsafeWindow.$;
 //添加链接函数
 var addLastPage = function(element)
 {
-  console.log(element);
   if ($(element).find('a[class*=th_tit]').length != 0) {
     var a = $(element).find('a[class*=th_tit]').attr("href").replace("/p/", "");
     var href = "http://tieba.baidu.com/f?ct=335675392&z=" + a + "&sc=1#sub";
