@@ -4,4 +4,4 @@
 
 ###说明  
 tieba to pan 的旧版名片版本，原脚本[tieba to pan](http://userscripts.org/scripts/show/415934)
-![](http://ntu.me/di/5WB7J/snap95701.png)
+![](http://imgsrc.baidu.com/forum/pic/item/2edda3cc7cd98d109f71e2c2233fb80e7aec9098.png)
