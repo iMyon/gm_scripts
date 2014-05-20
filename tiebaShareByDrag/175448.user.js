@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.0
+// @version     1.1.1
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -19,7 +19,8 @@ var shareUrl = '';
 var files,
   bdstoken,
   container = "";
-var user = unsafeWindow.PageData.user.name;
+var user = unsafeWindow.PageData.user.user_id;
+console.log(user);
 
 //GM保存的数据，多账号支持
 var postDiv = "#ueditor_replace";
@@ -44,6 +45,7 @@ var postDiv = "#ueditor_replace";
             //synchronous:true,
             onload: function(res) {
               bdstoken = res.responseText.match(/bdstoken="(.{1,50})";/)[1];
+              setting();
             }
           });
         //throw(-1);
@@ -57,7 +59,7 @@ var postDiv = "#ueditor_replace";
             //synchronous:true,
             onload: function(res) {
               bdstoken = res.responseText.match(/bdstoken="(.{1,50})";/)[1];
-              createFolder("/apps/拖拽脚本");
+              createFolder(path);
             }
           });
         for (var i = 0; i < files.length; i++) {
@@ -79,7 +81,6 @@ function uploadFile(i) {
   var xhr = GM_xmlhttpRequest({
     method: "POST",
     data: fd,
-    onprogress: uploadProgress,
     upload: {
       onprogress: uploadProgress
     },
@@ -109,7 +110,7 @@ function uploadFile(i) {
           });
         }
       });
-    var bar = document.querySelector('#progressBar');
+      var bar = document.querySelector('#tbsdProgressBar');
       bar.parentNode.removeChild(bar); //移除进度条
     }
   });
@@ -117,40 +118,42 @@ function uploadFile(i) {
 
 function uploadProgress(evt) //进度条
 {
-  if (!document.querySelector('#progressBar')) {
+  if (!document.querySelector('#tbsdProgressBar')) {
     var progressBar = document.createElement('progress');
-    progressBar.id = 'progressBar';
+    progressBar.id = 'tbsdProgressBar';
     progressBar.value = 0;
     progressBar.setAttribute('style', 'position:absolute;left:20%;top:50px;z-index:auto;');
-    document.querySelector('.edui-editor-body').appendChild(progressBar);
+    document.querySelector(".edui-editor-body").appendChild(progressBar);
   }
   if (evt.lengthComputable) {
-    document.querySelector('#progressBar').value = evt.loaded / evt.total;
+    document.querySelector('#tbsdProgressBar').value = evt.loaded / evt.total;
   } else {
-    document.querySelector('.editor_title_txt').innerHTML = '上传失败';
+    alert("上传失败");
   }
 }
 
 function insertContent(name, panlink) {
-  var html = document.querySelector("#ueditor_replace").innerHTML;
-  if (html == '<br>')
+  var html = document.querySelector(postDiv).innerHTML;
+  if (html == '<p><br></p>')
     html = '';
   else
-    html += '<br>';
-  html = html + name + ':<br>';
-  html += panlink;
-  document.querySelector("#ueditor_replace").innerHTML = html;
+    html += '<p><br></p>';
+  html = html + "<p>" + name + '</p>';
+  html = html + "<p>" + panlink + '</p>';
+  document.querySelector(postDiv).innerHTML = html;
 }
 
 function setting() //设置path和shareUrl
 {
-  alert('设置path和shareUrl');
-  var p = prompt('输入你要保存到度盘的目录路径，例如：/test/', userdata[user] && userdata[user].path || "");
-  path = p;
-  userdata[user] = {
-    path: p
-  };
-  GM_setValue('userdata', JSON.stringify(userdata));
+  var p = prompt('输入你要保存到度盘的目录路径，例如：/test/', userdata[user] && userdata[user].path || "/apps/拖拽脚本/");
+  if(p){
+    path = p;
+    userdata[user] = {
+      path: p
+    };
+    createFolder(p);
+    GM_setValue('userdata', JSON.stringify(userdata));
+  }
 }
 
 function createFolder(cpath, callback) {
@@ -172,7 +175,7 @@ function createFolder(cpath, callback) {
           url: 'http://pan.baidu.com/api/create?a=commit&channel=chunlei&clienttype=0&web=1&bdstoken=' + bdstoken + '&block_list=%5B%5D&isdir=1&method=post&path=%2F53135&size=',
           data: cfd,
           onload: function(res) {
-            console.log("成功创建目录 " + cpath);
+            alert("成功创建目录 " + cpath);
           }
         });
       }

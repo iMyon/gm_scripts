@@ -7,5 +7,5 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.0
+// @version     1.1.1
 // ==/UserScript==
