@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaShareByDrag/175448.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.1
+// @version     1.1.2
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -133,14 +133,8 @@ function uploadProgress(evt) //进度条
 }
 
 function insertContent(name, panlink) {
-  var html = document.querySelector(postDiv).innerHTML;
-  if (html == '<p><br></p>')
-    html = '';
-  else
-    html += '<p><br></p>';
-  html = html + "<p>" + name + '</p>';
-  html = html + "<p>" + panlink + '</p>';
-  document.querySelector(postDiv).innerHTML = html;
+  var content = name + "<p>" + panlink + '</p>';
+  unsafeWindow.test_editor.execCommand("inserthtml", content);
 }
 
 function setting() //设置path和shareUrl
