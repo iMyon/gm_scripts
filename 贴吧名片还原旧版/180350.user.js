@@ -8,82 +8,96 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.0.1
+// @version     1.1.0
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
-var un = '',
-    l_panelHtml = '',
-    offsetTop = '',
-    offsetLeft = '';
-//帖子内部
-if($("#j_p_postlist").length){
-  $('#j_p_postlist .j_user_card,#j_p_postlist .p_author_face,#j_p_postlist a.at').hover(function() {
-      userHover(this);
-  });
-}
-
-//首页
-if($('.j_thread_list').length){
-  $('.j_thread_list .j_user_card').hover(function() {
-      userHover(this,1);
-  });
-}
+var l_panelHtml;
 
 
-
-//监听动态添加的节点
-var observeNewUserDom = function(records) {
-    records.forEach(function(record) {
-        Array.prototype.forEach.call(record.addedNodes, function(element) {
-            if (element.getAttribute('class') && element.getAttribute('class').indexOf("lzl_cnt")) {
-                $(element).find('.j_user_card,a.at').hover(function() {
-                    if($(this).closest('.j_thread_list').length)
-                      userHover(this,1);
-                    else
-                      userHover(this);
-                });
-            }
-            //添加面板
-            if (element.id == "user_visit_card") {
-                GM_addStyle('#user_visit_card *{\
-                    display:block !important;\
-                }');
-                $(element).html(l_panelHtml);
-            }
-        });
-    });
-};
-
-//悬浮触发事件
-// type 1 首页悬浮 0 其他
-var userHover = function(user,type) {
-    if(type === undefined) type = 0;
-
-    un = JSON.parse($(user).attr('data-field')).un;
+addNodeInsertedListener('.j_user_card,a.at',function(){
+  $(this).hover(function() {
+    var type = 0;
+    if($(this).closest('.j_thread_list').length)
+      type = 1;
+    var un = JSON.parse($(this).attr('data-field').replace(/'/g,'"')).un;
     if(type === 0){
-      offsetTop = $(user).offset().top;
-      offsetLeft = $(user).offset().left + $(user).width();
+      var offsetTop = $(this).offset().top;
+      var offsetLeft = $(this).offset().left + $(this).width();
     }
     else{
-      offsetTop = $(user).offset().top - $(user).height() - 130;
-      offsetLeft = $(user).offset().left -165 + $(user).width()/2;
+      var offsetTop = $(this).offset().top - $(this).height() - 130;
+      var offsetLeft = $(this).offset().left -165 + $(this).width()/2;
     }
     l_panelHtml = '<iframe src="http://tieba.baidu.com/i/data/panel?un=' + un + '" width="330px" height="135px"></iframe>';
     GM_addStyle('#user_visit_card{\
         top:' + offsetTop + 'px !important;\
         left:' + offsetLeft + 'px !important;\
         }');
-};
+  });
+});
+addNodeInsertedListener("#user_visit_card",function(){
+  GM_addStyle('#user_visit_card *{\
+          display:block !important;\
+      }');
+  $(this).html(l_panelHtml);
+})
 
-var mp = new MutationObserver(observeNewUserDom);
-
-var option = {
-    'childList': true,
-    'subtree': true
-};
-
-mp.observe(document.body, option);
+//元素精确监听
+function addNodeInsertedListener(elCssPath, handler, executeOnce, noStyle) {
+  var animName = "anilanim",
+  prefixList = ["-o-", "-ms-", "-khtml-", "-moz-", "-webkit-", ""],
+  eventTypeList = ["animationstart", "webkitAnimationStart", "MSAnimationStart", "oAnimationStart"],
+  forEach = function (array, func) {
+    for (var i = 0, l = array.length; i < l; i++) {
+      func(array[i]);
+    }
+  };
+  if (!noStyle) {
+    var css = elCssPath + "{",
+    css2 = "";
+    forEach(prefixList, function (prefix) {
+      css += prefix + "animation-duration:.001s;" + prefix + "animation-name:" + animName + ";";
+      css2 += "@" + prefix + "keyframes " + animName + "{from{opacity:.9;}to{opacity:1;}}";
+    });
+    css += "}" + css2;
+    GM_addStyle(css);
+  }
+  if (handler) {
+    var bindedFunc = function (e) {
+      var els = document.querySelectorAll(elCssPath),
+      tar = e.target,
+      match = false;
+      if (els.length !== 0) {
+        forEach(els, function (el) {
+          if (tar === el) {
+            if (executeOnce) {
+              removeNodeInsertedListener(bindedFunc);
+            }
+            handler.call(tar, e);
+            return;
+          }
+        });
+      }
+    };
+    forEach(eventTypeList, function (eventType) {
+      document.addEventListener(eventType, bindedFunc, false);
+    });
+    return bindedFunc;
+  }
+}
+//移除精确监听
+function removeNodeInsertedListener(bindedFunc) {
+  var eventTypeList = ["animationstart", "webkitAnimationStart", "MSAnimationStart", "oAnimationStart"],
+  forEach = function (array, func) {
+    for (var i = 0, l = array.length; i < l; i++) {
+      func(array[i]);
+    }
+  };
+  forEach(eventTypeList, function (eventType) {
+    document.removeEventListener(eventType, bindedFunc, false);
+  });
+}
 
 GM_addStyle('#user_visit_card{\
     width:330px !important;\
