@@ -8,7 +8,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.0
+// @version     1.1.1
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -21,13 +21,22 @@ addNodeInsertedListener('.j_user_card,a.at',function(){
     if($(this).closest('.j_thread_list').length)
       type = 1;
     var un = JSON.parse($(this).attr('data-field').replace(/'/g,'"')).un;
+    if(un === undefined) //如果data-field里边没有un则去href的
+    {
+      un = this.href.match(/un=([^&]*)&/)[1];
+      un = decodeURIComponent(un);
+    }
+    var jqDom = $(this);
+    if($(this).find('img').length){
+      jqDom = $(this).find('img')
+    }
     if(type === 0){
-      var offsetTop = $(this).offset().top;
-      var offsetLeft = $(this).offset().left + $(this).width();
+      var offsetTop = jqDom.offset().top;
+      var offsetLeft = jqDom.offset().left + jqDom.width();
     }
     else{
-      var offsetTop = $(this).offset().top - $(this).height() - 130;
-      var offsetLeft = $(this).offset().left -165 + $(this).width()/2;
+      var offsetTop = jqDom.offset().top - jqDom.height() - 130;
+      var offsetLeft = jqDom.offset().left -165 + jqDom.width()/2;
     }
     l_panelHtml = '<iframe src="http://tieba.baidu.com/i/data/panel?un=' + un + '" width="330px" height="135px"></iframe>';
     GM_addStyle('#user_visit_card{\
