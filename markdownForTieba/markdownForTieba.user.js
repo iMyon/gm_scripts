@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     0.1
+// @version     0.2
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -49,7 +49,12 @@ $("cc div").each(function() {
     (function(context,matches){
       markdown.format(context);
       matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
-      markdown.parse(matches[1].replace(/<br>/ig, "\n"),function(data){
+      var text = matches[1].replace(/<br>/ig, "\n")
+        .replace(/&lt;/ig, "<")
+        .replace(/&gt;/ig, ">")
+        .replace(/&nbsp;/ig, " ")
+        .replace(/&amp;/ig, "&");
+      markdown.parse(text,function(data){
         try{
           JSON.parse(data);
         }catch(e){
