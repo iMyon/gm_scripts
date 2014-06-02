@@ -7,11 +7,12 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     0.2
+// @version     0.2.1
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
 
+var cssfile = "http://imyon.github.io/github-markdown-css/github-markdown.css";
 var is_cssLoad = false;
 
 var markdown = {
@@ -43,7 +44,7 @@ $("cc div").each(function() {
   var context = this;
   var matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
   if (matches) {
-    (!is_cssLoad) && loadcssfile("https://assets-cdn.github.com/assets/github-382e2d2394fe36287509f9d88e1aae81a78b71b2.css");
+    (!is_cssLoad) && loadcssfile(cssfile);
     is_cssLoad = true;
     //异步请求，给局部变量做个闭包
     (function(context,matches){

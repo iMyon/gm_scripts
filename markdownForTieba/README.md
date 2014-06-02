@@ -1,5 +1,6 @@
 ##markdownForTieba  
-转换贴吧楼层markdown格式为排版良好的html
+转换贴吧楼层markdown格式为排版良好的html  
+[安装](https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js)
 
 ###关于markdwon
 [Markdown 语法说明 (简体中文版)](http://wowubuntu.com/markdown/)
