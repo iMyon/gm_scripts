@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     0.2.4
+// @version     0.2.6
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -19,30 +19,54 @@ var markdown = {
   init: function(){
     $("cc div").each(function() {
       var context = this;
-      var matches = $(context).html().match(/&lt;markdown&gt;((\S|\s)*)&lt;\/markdown&gt;/i);
-      if (matches) {
-        (!is_cssLoad) && loadcssfile(cssfile);
-        is_cssLoad = true;
-        //异步请求，给局部变量做个闭包
-        (function(context,matches){
-          markdown.format(context);
-          matches = $(context).html().match(/&lt;markdown&gt;((\S|\s)*)&lt;\/markdown&gt;/i);
-          var text = matches[1].replace(/<br>/ig, "\n")
-            .replace(/&lt;/ig, "<")
-            .replace(/&gt;/ig, ">")
-            .replace(/&nbsp;/ig, " ")
-            .replace(/&amp;/ig, "&");
-          markdown.parse(text,function(data){
-            try{
-              JSON.parse(data);
-            }catch(e){
-              $(context).html($(context).html().replace(matches[0],data));
-              $(context).wrap('<article class="markdown-body"></article>');
-            }
-          });
-        })(context,matches);
+      var RegExpes = markdown.RegExpes();
+      for(var i = 0; i<RegExpes.length; i++){
+        var matches = $(context).html().match(RegExpes[i]);
+        if (matches) {
+          (!is_cssLoad) && loadcssfile(cssfile);
+          is_cssLoad = true;
+          //异步请求，给局部变量做个闭包
+          (function(context,matches){
+            markdown.format(context);
+            matches = $(context).html().match(RegExpes[i]);
+            var text = matches[1].replace(/<br>/ig, "\n")
+              .replace(/&lt;/ig, "<")
+              .replace(/&gt;/ig, ">")
+              .replace(/&nbsp;/ig, " ")
+              .replace(/&amp;/ig, "&");
+            markdown.parse(text,function(data){
+              try{
+                JSON.parse(data);
+              }catch(e){
+                $(context).html($(context).html().replace(matches[0],data));
+                $(context).wrap('<article class="markdown-body"></article>');
+              }
+            });
+          })(context,matches);
+        }
       }
     });
+  },
+  //定义前后文本
+  rules: {
+    "&lt;markdown&gt;": "&lt;/markdown&gt;",
+    "&lt;md&gt;": "&lt;/md&gt;",
+    "!#md":"$",
+    "！#md":"$"
+  },
+  //格式
+  wrap: function(content,start,end){
+    return start + content +end;
+  },
+  //匹配规则
+  RegExpes: function(){
+    var rs = [];
+    var content = "((\\S|\\s)*)";
+    for(var key in markdown.rules){
+      rs.push(new RegExp(markdown.wrap(content,key
+        ,markdown.rules[key]),"i"));
+    }
+    return rs;
   },
   parse:function(text,callback){
     $.ajax({

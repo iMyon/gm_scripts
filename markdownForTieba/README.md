@@ -7,11 +7,11 @@
 
 ###脚本使用
 
-把需要转换成markdown格式的文本用`<markdown></markdown>`标签包围起来
+把需要转换成markdown格式的文本用`<md></md>`标签包围起来
 如：
 <code>
 
-\<markdown>  
+\<md>  
 \###title  
 \```javascript
 
@@ -19,9 +19,17 @@ var a = 9;
 alert(a);
 
 \```  
-\</markdown>
+\</md>
 
 </code>
+
+全局使用可以用`!#md`声明,这样从此处到楼层结尾的文本都会被解析：
+```  
+
+!#md  
+###test
+
+```
 
 ###脚本预览  
 
