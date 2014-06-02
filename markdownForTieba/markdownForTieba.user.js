@@ -19,14 +19,14 @@ var markdown = {
   init: function(){
     $("cc div").each(function() {
       var context = this;
-      var matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
+      var matches = $(context).html().match(/&lt;markdown&gt;((\S|\s)*)&lt;\/markdown&gt;/i);
       if (matches) {
         (!is_cssLoad) && loadcssfile(cssfile);
         is_cssLoad = true;
         //异步请求，给局部变量做个闭包
         (function(context,matches){
           markdown.format(context);
-          matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
+          matches = $(context).html().match(/&lt;markdown&gt;((\S|\s)*)&lt;\/markdown&gt;/i);
           var text = matches[1].replace(/<br>/ig, "\n")
             .replace(/&lt;/ig, "<")
             .replace(/&gt;/ig, ">")
