@@ -62,9 +62,9 @@ var markdown = {
       if(!$(this).hasClass('at'))
         $(this).replaceWith(this.innerHTML);
     });
-    $(element).find("img").each(function(){
-      $(this).replaceWith(this.src);
-    });
+    // $(element).find("img").each(function(){
+    //   $(this).replaceWith(this.src);
+    // });
   }
 }
 
