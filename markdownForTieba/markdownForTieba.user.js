@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     0.2.1
+// @version     0.2.2
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -16,6 +16,34 @@ var cssfile = "http://imyon.github.io/github-markdown-css/github-markdown.css";
 var is_cssLoad = false;
 
 var markdown = {
+  init: function(){
+    $("cc div").each(function() {
+      var context = this;
+      var matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
+      if (matches) {
+        (!is_cssLoad) && loadcssfile(cssfile);
+        is_cssLoad = true;
+        //异步请求，给局部变量做个闭包
+        (function(context,matches){
+          markdown.format(context);
+          matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
+          var text = matches[1].replace(/<br>/ig, "\n")
+            .replace(/&lt;/ig, "<")
+            .replace(/&gt;/ig, ">")
+            .replace(/&nbsp;/ig, " ")
+            .replace(/&amp;/ig, "&");
+          markdown.parse(text,function(data){
+            try{
+              JSON.parse(data);
+            }catch(e){
+              $(context).html($(context).html().replace(matches[0],data));
+              $(context).wrap('<article class="markdown-body"></article>');
+            }
+          });
+        })(context,matches);
+      }
+    });
+  },
   parse:function(text,callback){
     $.ajax({
         type: 'POST',
@@ -40,30 +68,10 @@ var markdown = {
   }
 }
 
-$("cc div").each(function() {
-  var context = this;
-  var matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
-  if (matches) {
-    (!is_cssLoad) && loadcssfile(cssfile);
-    is_cssLoad = true;
-    //异步请求，给局部变量做个闭包
-    (function(context,matches){
-      markdown.format(context);
-      matches = $(context).html().match(/&lt;markdown&gt;((.|\s)*)&lt;\/markdown&gt;/i);
-      var text = matches[1].replace(/<br>/ig, "\n")
-        .replace(/&lt;/ig, "<")
-        .replace(/&gt;/ig, ">")
-        .replace(/&nbsp;/ig, " ")
-        .replace(/&amp;/ig, "&");
-      markdown.parse(text,function(data){
-        try{
-          JSON.parse(data);
-        }catch(e){
-          $(context).html($(context).html().replace(matches[0],data));
-          $(context).wrap('<article class="markdown-body"></article>');
-        }
-      });
-    })(context,matches);
+markdown.init();
+$(".left_section").on("DOMNodeInserted",function(e) {
+  if(e.target.id && e.target.id.indexOf("j_p_postlist")!= -1){
+    markdown.init();
   }
 });
 
