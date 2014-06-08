@@ -7,7 +7,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/markdownForTieba/markdownForTieba.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     0.2.6
+// @version     0.2.7
 // ==/UserScript==
 
 var $ = unsafeWindow.$;
@@ -51,8 +51,8 @@ var markdown = {
   rules: {
     "&lt;markdown&gt;": "&lt;/markdown&gt;",
     "&lt;md&gt;": "&lt;/md&gt;",
-    "!#md":"$",
-    "！#md":"$"
+    "#!md":"$",
+    "#！md":"$"
   },
   //格式
   wrap: function(content,start,end){
@@ -113,7 +113,7 @@ GM_addStyle("code{\
   display: inline;\
 }\
 em{\
-    font-style: italic;\
+  font-style: italic;\
 }\
 .octicon-link:before {\
 }");
