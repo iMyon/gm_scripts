@@ -1,6 +1,9 @@
 // ==UserScript==
 // @name        tiebaCustomFace 
 // @namespace   Myon
+// @grant       GM_getValue
+// @grant       GM_addStyle
+// @grant       GM_setValue
 // @description 贴吧自定义表情
 // @include     http://tieba.baidu.com/*
 // @author      Myon<myon.cn@gmail.com>
@@ -715,11 +718,6 @@ document.onclick = function(e) {
     if (target.nodeName.toLowerCase() == "html")
         $('#addFaceDiv').remove();
 }
-
-//去除表情组中重复表情
-GM_registerMenuCommand("tiebaCustomFace--去除表情组中重复表情", function() {
-
-});
 
 //prev、next表情滚动条点击事件
 var tabScroll = function() {}
