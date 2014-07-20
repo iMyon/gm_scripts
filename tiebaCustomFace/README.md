@@ -1,5 +1,7 @@
 ###安装说明
 
+[点击安装](https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.user.js)  
+
 firefox用户先安装Greasemonkey扩展，chrome用户先安装Tampermonkey，再安装此脚本
 ps:**不保证兼容chrome**
 

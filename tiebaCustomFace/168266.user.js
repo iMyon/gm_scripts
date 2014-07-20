@@ -5,16 +5,17 @@
 // @grant       GM_addStyle
 // @grant       GM_setValue
 // @description 贴吧自定义表情
+// @require     http://libs.baidu.com/jquery/1.9.0/jquery.js
 // @include     http://tieba.baidu.com/*
 // @author      Myon<myon.cn@gmail.com>
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.0
+// @version     1.1.0
 // ==/UserScript==
 
-var _window = typeof unsafeWindow == 'undefined' ? window : unsafeWindow;
-var $ = _window.$;
+// var _window = typeof unsafeWindow == 'undefined' ? window : unsafeWindow;
+// var $ = _window.$;
 
 var faces = []; //全部表情
 var selector; //判断选中的是回复框还是楼中楼
@@ -93,7 +94,7 @@ var addFaces = function() {
     tabNum = GM_getValue('tabNum', '0');
     //初始化默认表情组
     //if(tabNum!=-1)
-    //tabNum = 0;	//默认上次标签页
+    //tabNum = 0;   //默认上次标签页
     //tabNum=0;
     if (tabNum == 0 || tabNum > faces.length) {
         hidemenu();
@@ -183,7 +184,7 @@ var addSettingElement = function() {
     + '<div id="addFaceMenu">增加</div>' //增加按钮
     + '<div id="deleteFaceMenu">删除</div>' //删除按钮
     + '<div id="tab_MoveLeft">左移</div>' + '<div id="tab_MoveRight">右移</div>' + '<div id="getProfile">导出</div>' + '<div id="loadProfile">导入</div>' + '<div id="showFace">隐藏</div>' + '</div>');
-    //+'<div id="settingmenu">显示/隐藏菜单</div>');	
+    //+'<div id="settingmenu">显示/隐藏菜单</div>');  
 }
 //添加只需添加一次的事件
 var m, n, s, l, r, cc; //事件
@@ -218,8 +219,8 @@ var tabOnClick = function(index) //添加自定义表情标签事件，index为i
 {
     function clickIdTab() {
         $('.edui-container li.s_tab_btn[data-index="1"]').click();
-      	$('.tbui_scroll_bar.j_scroll_bar').show();
-      	faceScrollTop();
+        $('.tbui_scroll_bar.j_scroll_bar').show();
+        faceScrollTop();
         selector.find('TABLE.s_layer_table tbody').html(tbodyHtml[index]);
         selector.find('TABLE.s_layer_table').css({'margin-top':'0px'});
         if (tabNum != 0)
@@ -343,7 +344,7 @@ var fetchTbodyHtml = function() {
                 if (currentFaceSrc) {
                     currentFaceSrc = currentFaceSrc.replace(/\s|click=[0-9]*/g, ''); //去链接空格
                     tbody[index] += '<td class="s_face j_emotion" index="' + cindex + '" border="1" data-surl="' + currentFaceSrc + '" data-postflag="' + data_postflag + '" style="border-collapse:collapse;"';
-                    tbody[index] = tbody[index] + ' align="center" 	bgcolor="#FFFFFF" width="' + face.faceWidth_Height + '" max-height="' + face.faceWidth_Height + '">';
+                    tbody[index] = tbody[index] + ' align="center"  bgcolor="#FFFFFF" width="' + face.faceWidth_Height + '" max-height="' + face.faceWidth_Height + '">';
                     tbody[index] += '<a class="img imgclasses" onclick="onClickImg(\'' + currentFaceSrc + '\')" style="background:none;"><img class="faceImg" src="' + currentFaceSrc + '" style="max-height:' + face.faceWidth_Height + 'px;max-width:' + face.faceWidth_Height + 'px;"></img></a>';
                     tbody[index] += '</td>';
                 }
@@ -662,24 +663,24 @@ var showAddFaceDiv = function() {
             }, false)
         });
         GM_addStyle('\
-			#addFaceDiv\
-			{\
-				z-index:99999999;\
-				position:fixed;\
-				top:10%;\
-				border:solid #DFDFDF 5px;\
-				line-height:50px;\
-				width:700px;\
-				height:300px;\
-				background:#F9EED0;\
-				padding:5px;\
-				text-align:center;\
-			}\
-			.addface\
-			{\
-				font-size:20px;\
-				margin-right:10px;\
-			}');
+            #addFaceDiv\
+            {\
+                z-index:99999999;\
+                position:fixed;\
+                top:10%;\
+                border:solid #DFDFDF 5px;\
+                line-height:50px;\
+                width:700px;\
+                height:300px;\
+                background:#F9EED0;\
+                padding:5px;\
+                text-align:center;\
+            }\
+            .addface\
+            {\
+                font-size:20px;\
+                margin-right:10px;\
+            }');
     } else {
         $('#addFaceDiv').remove();
         showAddFaceDiv();
@@ -734,60 +735,60 @@ GM_addStyle(imgCss);
 
 var aditmenu = '#aditFaceMenu,#addFaceMenu,#deleteFaceMenu,#tab_MoveLeft,#tab_MoveRight,#getProfile,#loadProfile,#showFace\
 {\
-	width:50px !important;\
-	height:20px!important;\
-	position:absolute !important;\
-	left:-48px !important;\
-	bottom:10px !important;\
-	font-size:20px;\
-	color:#99C871;\
-	border-radius:5px 0px 0px 5px;\
-	background:#FAFAFA;\
-	cursor:pointer;\
+    width:50px !important;\
+    height:20px!important;\
+    position:absolute !important;\
+    left:-48px !important;\
+    bottom:10px !important;\
+    font-size:20px;\
+    color:#99C871;\
+    border-radius:5px 0px 0px 5px;\
+    background:#FAFAFA;\
+    cursor:pointer;\
 }\
 #getProfile\
 {\
-	bottom:30px !important;\
+    bottom:30px !important;\
 }\
 #loadProfile\
 {\
-	bottom:50px !important;\
+    bottom:50px !important;\
 }\
 #aditFaceMenu\
 {\
-	bottom:70px !important;\
+    bottom:70px !important;\
 }\
 #deleteFaceMenu\
 {\
-	bottom:90px !important;\
+    bottom:90px !important;\
 }\
 #tab_MoveLeft\
 {\
-	bottom:110px !important;\
+    bottom:110px !important;\
 }\
 #tab_MoveRight\
 {\
-	bottom:130px !important;\
+    bottom:130px !important;\
 }\
 #showFace\
 {\
-	bottom:170px !important;\
+    bottom:170px !important;\
 }\
 #settingmenu\
 {\
-	position:fixed !important;\
-	bottom:280px !important;\
+    position:fixed !important;\
+    bottom:280px !important;\
 }\
 .s_tab_btnbg{\
 padding:0px 1px !important;\
 }\
 .faceImg\
 {\
-	height: auto !important;\
+    height: auto !important;\
 }\
 IMG.faceImg:hover\
 {\
-	cursor:pointer !important;\
+    cursor:pointer !important;\
 }\
 .customSmily\
 {\
@@ -797,118 +798,118 @@ GM_addStyle(aditmenu);
 
 //添加删除编辑框样式
 var ccss = '\
-	#Face_float\
-	{\
-		margin:auto;\
-		width:801px;\
-		height:360px;\
-		background:#F9EED0;\
-		border:solid #DFDFDF 10px;\
-	}\
-	#Face_floatedit\
-	{\
-		margin:auto;\
-		border:none !important;\
-		overflow:auto; \
-  		width: 800px;\
-  		resize: none;\
-  		height: 360px;\
-  		font-size:15px;\
-  		color:black;\
- 	}\
-	#maxwindow\
-	{\
-		text-align:center;\
-  		position: fixed;\
-  		bottom: 0%;\
-  		left: 0%;\
-  		width: 100%;\
-  		height: 100%;\
-  		z-index: 65535 !important;\
-  		background:white !important;\
-  		opacity:.9;\
- 	}\
- 	.search_main_fixed\
- 	{\
- 		z-index:1 !important;\
- 	}\
-	#config\
-	{\
-		margin:auto;\
-		height:50px;\
-		display:block;\
-		cursor:pointer;\
-	}\
-	#config span\
-	{\
-		position:relative;\
-		top:20px;\
-		margin-right:10px;\
-		font-size:30px;\
-		border:1px solid grey;\
-		width:50px;\
-		height:50px;\
-	}\
-	#tabSetting span\
-	{\
-		font-size:20px;\
-		border:0px solid grey;\
-		width:50px;\
-		height:50px;\
-		margin-right:15px;\
-	}\
-	#tabSetting input\
-	{\
-		color:green;\
-	}';
+    #Face_float\
+    {\
+        margin:auto;\
+        width:801px;\
+        height:360px;\
+        background:#F9EED0;\
+        border:solid #DFDFDF 10px;\
+    }\
+    #Face_floatedit\
+    {\
+        margin:auto;\
+        border:none !important;\
+        overflow:auto; \
+        width: 800px;\
+        resize: none;\
+        height: 360px;\
+        font-size:15px;\
+        color:black;\
+    }\
+    #maxwindow\
+    {\
+        text-align:center;\
+        position: fixed;\
+        bottom: 0%;\
+        left: 0%;\
+        width: 100%;\
+        height: 100%;\
+        z-index: 65535 !important;\
+        background:white !important;\
+        opacity:.9;\
+    }\
+    .search_main_fixed\
+    {\
+        z-index:1 !important;\
+    }\
+    #config\
+    {\
+        margin:auto;\
+        height:50px;\
+        display:block;\
+        cursor:pointer;\
+    }\
+    #config span\
+    {\
+        position:relative;\
+        top:20px;\
+        margin-right:10px;\
+        font-size:30px;\
+        border:1px solid grey;\
+        width:50px;\
+        height:50px;\
+    }\
+    #tabSetting span\
+    {\
+        font-size:20px;\
+        border:0px solid grey;\
+        width:50px;\
+        height:50px;\
+        margin-right:15px;\
+    }\
+    #tabSetting input\
+    {\
+        color:green;\
+    }';
 
 //黑名单样式
 var blistcss = '\
-	#blist\
-	{\
-		position:fixed;\
-		left:0px;\
-		top:0px;\
-		width:100%;\
-		height:100%;\
-		background:none;\
-		z-index:55555;\
-		text-align:center;\
-	}\
-	#blistdiv\
-	{\
-		margin: auto;\
-		border:solid #DFDFDF 5px;\
-		line-height:50px;\
-		width:600px;\
-		height:300px;\
-		background:#F9EED0;\
-		padding:5px;\
-		text-align:center;\
-	}\
-	.blistElement\
-	{\
-		padding:0px 0px 4px 10px;\
-		cursor:pointer;\
-		width:50px;\
-		height:20px;\
-		font-size:20px;\
-	}\
-	.blisthide\
-	{\
-		color:#CEDECA;\
-	}\
-	#blistConfig\
-	{\
-		background:#CFDCC9;\
-		padding:0px;\
-		cursor:pointer;\
-		border:white solid 2px;\
-		width:50px;\
-		height:20px;\
-		font-size:20px;\
-	}\
-	';
+    #blist\
+    {\
+        position:fixed;\
+        left:0px;\
+        top:0px;\
+        width:100%;\
+        height:100%;\
+        background:none;\
+        z-index:55555;\
+        text-align:center;\
+    }\
+    #blistdiv\
+    {\
+        margin: auto;\
+        border:solid #DFDFDF 5px;\
+        line-height:50px;\
+        width:600px;\
+        height:300px;\
+        background:#F9EED0;\
+        padding:5px;\
+        text-align:center;\
+    }\
+    .blistElement\
+    {\
+        padding:0px 0px 4px 10px;\
+        cursor:pointer;\
+        width:50px;\
+        height:20px;\
+        font-size:20px;\
+    }\
+    .blisthide\
+    {\
+        color:#CEDECA;\
+    }\
+    #blistConfig\
+    {\
+        background:#CFDCC9;\
+        padding:0px;\
+        cursor:pointer;\
+        border:white solid 2px;\
+        width:50px;\
+        height:20px;\
+        font-size:20px;\
+    }\
+    ';
 
 //小脸数据导入支持（页面右下角）
 
@@ -944,7 +945,7 @@ function normal_Listener() {
                 $('.edui-container li.s_tab_btn[data-index="1"]').click();
                 selector = $(css).find('.edui-dropdown-menu');
                 addFaces();
-              	faceScrollTop();
+                faceScrollTop();
                 //a.removeEventListener("click",m,false);
             } else {
                 setTimeout(m, 20);
@@ -984,4 +985,4 @@ normal_Listener();
 //LZL_Listener('.j_lzl_p');
 //LZL_Listener('.lzl_s_r');
 addImgToCustomFace();
-//xiaolianLoad();		//小脸导入函数，需要的自己取消注释，改完后刷新在页面右下角
+//xiaolianLoad();       //小脸导入函数，需要的自己取消注释，改完后刷新在页面右下角
