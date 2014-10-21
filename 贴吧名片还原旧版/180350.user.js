@@ -10,7 +10,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/%E8%B4%B4%E5%90%A7%E5%90%8D%E7%89%87%E8%BF%98%E5%8E%9F%E6%97%A7%E7%89%88/180350.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.3
+// @version     1.1.4
 // ==/UserScript==
 
 var l_panelHtml;
@@ -38,7 +38,7 @@ addNodeInsertedListener('.j_user_card,a.at',function(){
       var offsetTop = jqDom.offset().top - jqDom.height() - 130;
       var offsetLeft = jqDom.offset().left -165 + jqDom.width()/2;
     }
-    l_panelHtml = '<iframe src="http://tieba.baidu.com/i/data/panel?un=' + un + '" width="330px" height="135px"></iframe>';
+    l_panelHtml = '<iframe src="http://tieba.baidu.com/i/data/panel?un=' + un + '&ie=utf-8" width="330px" height="135px"></iframe>';
     GM_addStyle('#user_visit_card{\
         top:' + offsetTop + 'px !important;\
         left:' + offsetLeft + 'px !important;\
