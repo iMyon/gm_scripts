@@ -11,5 +11,5 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.2
+// @version     1.2.0
 // ==/UserScript==

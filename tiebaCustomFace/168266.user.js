@@ -11,7 +11,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.1.2
+// @version     1.2.0
 // ==/UserScript==
 
 // var _window = typeof unsafeWindow == 'undefined' ? window : unsafeWindow;
@@ -308,7 +308,7 @@ var ImgOnClickAddMostUsedFace = function() {
 }
 
 //针对某些非百度内部和宽度大于100的表情,点击改变BDE_SMILY为BDE_IMAGE,否则会未知错误
-unsafeWindow.onClickImg = function(src) {
+var onClickImg = function(src) {
   /*获取原始图片大小*/
   var theImage = new Image();
   theImage.src = src;
@@ -324,6 +324,8 @@ unsafeWindow.onClickImg = function(src) {
     }, 40);
   }
 }
+location.href = "javascript:var onClickImg = "+String(onClickImg) + ";void(0)";
+
 //获取tbodyHtml(表情的HTML表示)
 var fetchTbodyHtml = function() {
   var tbody = new Array();
