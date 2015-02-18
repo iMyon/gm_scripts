@@ -11,7 +11,7 @@
 // @downloadURL https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.user.js
 // @updateURL   https://github.com/iMyon/gm_scripts/raw/master/tiebaCustomFace/168266.meta.js
 // @icon        http://tb.himg.baidu.com/sys/portrait/item/c339b7e2d3a1b5c4c3a8d726
-// @version     1.2.1
+// @version     1.2.2
 // ==/UserScript==
 
 // var _window = typeof unsafeWindow == 'undefined' ? window : unsafeWindow;
@@ -315,14 +315,14 @@ var onClickImg = function(src) {
   var myReg = /imgsrc\.baidu\.com|static\.tieba\.baidu\.com/;
   var imageWidth = theImage.width;
   var imageHeight = theImage.height;
-  if (!(myReg.test(src) && imageWidth <= 100)) {
+  // if (!(myReg.test(src) && imageWidth <= 100)) {
     setTimeout(function() {
       var i = $('#ueditor_replace img[src="' + src + '"][class="BDE_Smiley"]');
       i.attr('class', 'BDE_Image');
       /*i.attr('width',imageWidth);
       i.attr('height',imageHeight);*/
     }, 40);
-  }
+  // }
 }
 location.href = "javascript:var onClickImg = "+String(onClickImg) + ";void(0)";
 
