@@ -32,7 +32,9 @@ $( document ).ready(() => {
         }
       }
     }
-    uploadFile(file);
+    if (file) {
+      uploadFile(file);
+    }
   });
   // 拖拽事件
   editorElem.addEventListener("drop", (e) => {
